@@ -246,7 +246,6 @@ p {
         transform: scale(0.9);
         background-color: #f7e0c0; }
   .view .content {
-    height: 300rem;
     font-size: 1.6rem;
     margin: 7.1rem 0 0 10rem;
     transition: all 0.5s linear;
