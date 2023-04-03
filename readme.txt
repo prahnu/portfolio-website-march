@@ -17,4 +17,8 @@ Git hub commands
 3. git config --global user.email USEREMAIL
 4. git status
 5. git add -A
-6. 
+6. git commit -m "Message"
+7. git reset --hard HEAD/(ID) (This is to reset the code and to go ba k to previous commit)
+8. git log (To see all the log)
+9. git branch new-branch (to create new branch)
+10. git checkout new-branch
