@@ -1,0 +1,387 @@
+// @import '_variables.scss';
+.nav {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 30rem;
+	background-color: $Dark-Primary;
+	z-index: 400;
+	border-right: $Common-Border;
+	display: flex;
+	align-items: center;
+	transform: translateX(-20rem);
+	transition: all 0.5s linear;
+	ul {
+		list-style: none;
+		width: 100%;
+		opacity: 0;
+		transition: 0.5s ease-in 0.3s;
+
+		li {
+			padding: 1rem 2rem;
+			font-size: 2rem;
+			font-weight: 300;
+			margin: 1rem 0;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			transition: 0.3s ease-out;
+			&::before {
+				content: '';
+				height: 0.2rem;
+				background-color: $Dark-Accent;
+				width: 0;
+				display: inline-block;
+				transition: 0.3s ease-out;
+				border-radius: 12px;
+			}
+			&:hover::before {
+				width: 4rem;
+			}
+
+			&.active::before {
+				width: 4rem;
+			}
+		}
+	}
+
+	.social {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+		padding: 1rem;
+		position: absolute;
+		bottom: 0;
+		right: 2.2rem;
+		i {
+			font-size: 3rem;
+			color: $Dark-Accent;
+			cursor: pointer;
+			transition: 0.3s ease;
+			&:hover {
+				transform: scale(1.2);
+			}
+		}
+	}
+}
+
+.close-btn {
+	position: fixed;
+	height: 2rem;
+	width: 3.6rem;
+	// background-color: $Dark-Accent;
+	top: 2.5rem;
+	left: 3rem;
+	z-index: 500;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	transition: 0.3s ease;
+	cursor: pointer;
+	span {
+		height: 0.2rem;
+		width: 100%;
+		border-radius: 0.4rem;
+		transform-origin: center;
+		background-color: $Dark-Accent;
+		transition: 0.2s ease-in-out;
+	}
+}
+
+.view {
+	width: 100vw;
+	.head {
+		position: fixed;
+		top: 0;
+		height: 7rem;
+		background-color: $Dark-Primary;
+		width: 100%;
+		z-index: 300;
+		border-bottom: $Common-Border;
+		transform: translateX(0);
+		transition: all 0.5s linear;
+		display: flex;
+		align-items: center;
+
+		.logo-container {
+			cursor: pointer;
+			display: flex;
+
+			&:hover .logo {
+				filter: invert(100%);
+			}
+			.logo {
+				margin-left: 14rem;
+				height: 40%;
+				transition: 0.3s ease;
+			}
+		}
+
+		h1 {
+			margin-left: 1rem;
+			font-size: 2.4rem;
+			font-weight: 300;
+		}
+
+		.contact-btn {
+			position: absolute;
+			height: 100%;
+			width: 19rem;
+			background-color: $Dark-Accent;
+			color: $Dark-Primary;
+			top: 0;
+			right: 0;
+			display: grid;
+			place-items: center;
+			font-size: 2rem;
+			font-weight: 300;
+			letter-spacing: 0.2rem;
+			transition: 0.3s ease;
+			cursor: pointer;
+			text-transform: uppercase;
+			&:hover {
+				font-size: 1.8rem;
+				box-shadow: inset 0 0 0 0.2rem $Dark-Primary;
+			}
+
+			&:active {
+				transform: scale(0.9);
+				background-color: lighten($Dark-Accent, 20%);
+			}
+		}
+	}
+	.content {
+		height: 300rem;
+		font-size: 1.6rem;
+		margin: 7.1rem 0 0 10rem;
+		transition: all 0.5s linear;
+		color: $Dark-Accent;
+		animation: bodyAnimation 5s ease-in-out backwards;
+
+		.hero {
+			height: 85vh;
+			display: flex;
+			align-items: center;
+			min-height: 62rem;
+			.hero-left {
+				flex: 1.5;
+				height: 100%;
+				border-right: $Common-Border;
+				border-bottom: $Common-Border;
+				padding: 0 2rem 0 4rem;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				h2 {
+					font-size: 7rem;
+					font-weight: 500;
+					line-height: 7rem;
+					margin: 1rem 0;
+					animation: headingAnimation 5s ease-in-out backwards;
+					span {
+						display: block;
+						color: $Dark-Primary;
+						text-shadow: 0.8rem 0.5rem 2.5rem rgba($Dark-Accent, 0.9);
+						text-transform: capitalize;
+					}
+				}
+				.btn {
+					position: relative;
+					width: fit-content;
+					padding: 1rem 0;
+					display: flex;
+					gap: 1rem;
+					align-items: center;
+					color: $Dark-Accent;
+					transition: 0.3s ease;
+					margin: 2rem 0;
+					&::before {
+						content: '';
+						position: absolute;
+						inset: auto 0 0 0;
+						height: 0.2rem;
+						background-color: $Dark-Accent;
+						border-radius: 0.2rem;
+						transition: 0.2s ease;
+					}
+					&:hover {
+						padding-left: 1rem;
+					}
+					a {
+						text-decoration: none;
+						color: $Dark-Accent;
+						font-weight: 600;
+					}
+				}
+			}
+			.hero-right {
+				flex: 1;
+				height: 100%;
+				border-bottom: $Common-Border;
+				overflow: hidden;
+				.skills-trail {
+					padding-left: 5rem;
+					animation: scroll 800s backwards;
+					* {
+						pointer-events: none;
+					}
+					img {
+						height: 16rem;
+						width: 16rem;
+						margin: 4rem 2rem;
+					}
+					i {
+						font-size: 10rem;
+						margin: 4rem 6rem;
+					}
+					span {
+						font-size: 3rem;
+						display: inline-block;
+						margin: 3rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+.portfolio {
+	padding: 30rem 0;
+	.portfolio-grid {
+		display: grid;
+		width: 70%;
+		grid-template-columns: repeat(2, 1fr);
+		grid-auto-rows: 50rem;
+		grid-gap: 3rem;
+		margin: 2rem auto;
+		.cell {
+			&:nth-of-type(odd) {
+				transform: translateY(-50%);
+			}
+			&:not(:first-child) {
+				border: $Common-Border;
+			}
+			&.heading {
+				height: 20rem;
+				opacity: 0;
+				transition: 0.5s ease;
+				&.show {
+					opacity: 1;
+				}
+				h3 {
+					font-size: 5rem;
+					font-weight: 500;
+				}
+			}
+			&.card {
+				position: relative;
+				padding: 3rem;
+				.image-box {
+					position: relative;
+					cursor: pointer;
+					overflow: hidden;
+					&:hover .hover-element {
+						opacity: 0.8;
+						transform: scale(1);
+					}
+					.hover-element {
+						position: absolute;
+						background-color: $Dark-Accent;
+						color: $Dark-Primary;
+						height: 10rem;
+						width: 10rem;
+						left: 0;
+						top: 0;
+						border-radius: 50%;
+						display: grid;
+						place-items: center;
+						text-align: center;
+						font-size: 1.2rem;
+						transition: opacity 0.5s ease;
+						transition: transform 0.5s ease;
+						opacity: 0;
+						transform: scale(0);
+						pointer-events: none;
+					}
+
+					.image-banner {
+						position: absolute;
+						inset: 0 0 0 0;
+						background-color: $Dark-Accent;
+						color: $Dark-Primary;
+						animation: none;
+						clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+						font-size: 4rem;
+						display: grid;
+						place-items: center;
+					}
+
+					.slide {
+						animation: banner-peek 2s ease forwards;
+					}
+					img {
+						width: 90%;
+						margin: 0 auto;
+						height: 50%;
+						display: block;
+						transition: 0.5s ease;
+						&:hover {
+							transform: scale(1.1);
+						}
+					}
+				}
+				h5 {
+					font-size: 2rem;
+				}
+				p {
+					font-size: 1.4rem;
+					padding: 1rem 0;
+				}
+				.btn-outline {
+					display: inline-block;
+					padding: 1rem;
+					border: $Common-Border;
+					margin: 1rem 0;
+					&:not(:last-child) {
+						margin-right: 1rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Actions
+
+body.active {
+	.nav {
+		transform: translateX(0);
+		ul {
+			opacity: 1;
+		}
+	}
+
+	.head {
+		transform: translateX(20rem);
+	}
+
+	.content {
+		transform: translateX(20rem);
+	}
+
+	.close-btn {
+		span {
+			&:nth-child(1) {
+				transform: translateY(0.6rem) rotate(45deg) scale(1);
+			}
+			&:nth-child(2) {
+				opacity: 0;
+				transform: translateY(0) rotate(0) scale(0);
+			}
+			&:nth-child(3) {
+				transform: translateY(-1.2rem) rotate(-45deg) scale(1);
+			}
+		}
+	}
+}

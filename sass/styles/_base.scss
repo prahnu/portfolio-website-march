@@ -1,0 +1,66 @@
+@import '_variables.scss';
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+// Scroll bar style
+
+::-webkit-scrollbar {
+	width: 0.4rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background: $Dark-Accent;
+}
+
+/* Handle on hover */
+
+// Selection coloe
+::-moz-selection {
+	/* Code for Firefox */
+	color: $Dark-Primary;
+	background: $Dark-Accent;
+}
+
+::selection {
+	color: $Dark-Primary;
+	background: $Dark-Accent;
+}
+html {
+	font-size: 62.5%;
+}
+
+body {
+	box-sizing: border-box;
+	background-color: $Dark-Primary;
+	color: $Dark-Accent;
+	font-family: 'Kanit', sans-serif;
+	overflow-x: hidden;
+	position: relative;
+	// filter: blur(0px);
+}
+
+p {
+	padding: 2rem 0 0 0;
+	font-weight: 200;
+}
+
+.side-tag {
+	position: fixed;
+	background-color: #65fdcb;
+	color: $Dark-Primary;
+	top: 80%;
+	right: 2.4rem;
+	transform-origin: right;
+	z-index: 600;
+	transform: rotate(90deg);
+	padding: 1rem 2rem;
+	display: grid;
+	place-items: center;
+}

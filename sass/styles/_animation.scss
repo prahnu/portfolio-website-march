@@ -1,0 +1,41 @@
+@keyframes scroll {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(-90%);
+	}
+}
+@keyframes banner-peek {
+	0% {
+		clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	}
+	50% {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	}
+	100% {
+		clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+	}
+}
+
+@keyframes headingAnimation {
+	from {
+		line-height: 0rem;
+		opacity: 0;
+		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	}
+	to {
+		line-height: 7rem;
+		opacity: 1;
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	}
+}
+
+@keyframes bodyAnimation {
+	from {
+		clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	}
+	to {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	}
+}
