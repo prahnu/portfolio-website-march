@@ -1,7 +1,17 @@
 const closeBtn = document.querySelector('.close-btn');
-const body = document.querySelector('body');
+const body = document.body;
 const imageBanner = document.querySelectorAll('.image-banner');
 const cellHeading = document.querySelector('.cell.heading');
+
+document.addEventListener('click', (event) => {
+	// console.log(!body.classList.contains('active'));
+	if (event.target.closest('.close-btn')) return;
+
+	if (!event.target.closest('.nav')) {
+		body.classList.remove('active');
+	}
+});
+
 function controlBubble(event) {
 	if (event.target.closest('.image-box')) {
 		const targetID = event.target.closest('.image-box').attributes[1].value;
@@ -40,3 +50,4 @@ document.addEventListener('mousemove', controlBubble);
 
 checkBoxes();
 window.addEventListener('scroll', checkBoxes);
+// Removing active class from body when clicking outside the navbar

@@ -11,6 +11,10 @@
 	align-items: center;
 	transform: translateX(-20rem);
 	transition: all 0.5s linear;
+	@include respond(phone) {
+		transform: translateX(-30rem);
+		z-index: 200;
+	}
 	ul {
 		list-style: none;
 		width: 100%;
@@ -71,14 +75,17 @@
 	height: 2rem;
 	width: 3.6rem;
 	// background-color: $Dark-Accent;
-	top: 2.5rem;
-	left: 3rem;
+	inset: 2.5rem auto auto 3rem;
+
 	z-index: 500;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	transition: 0.3s ease;
 	cursor: pointer;
+	@include respond(phone) {
+		inset: 2.5rem 3rem auto auto;
+	}
 	span {
 		height: 0.2rem;
 		width: 100%;
@@ -91,6 +98,7 @@
 
 .view {
 	width: 100vw;
+	overflow-x: hidden;
 	.head {
 		position: fixed;
 		top: 0;
@@ -103,11 +111,10 @@
 		transition: all 0.5s linear;
 		display: flex;
 		align-items: center;
-
 		.logo-container {
 			cursor: pointer;
 			display: flex;
-
+			align-items: center;
 			&:hover .logo {
 				filter: invert(100%);
 			}
@@ -115,6 +122,9 @@
 				margin-left: 14rem;
 				height: 40%;
 				transition: 0.3s ease;
+				@include respond(phone) {
+					margin-left: 4rem;
+				}
 			}
 		}
 
@@ -140,6 +150,9 @@
 			transition: 0.3s ease;
 			cursor: pointer;
 			text-transform: uppercase;
+			@include respond(phone) {
+				display: none;
+			}
 			&:hover {
 				font-size: 1.8rem;
 				box-shadow: inset 0 0 0 0.2rem $Dark-Primary;
@@ -158,7 +171,9 @@
 		transition: all 0.5s linear;
 		color: $Dark-Accent;
 		animation: bodyAnimation 5s ease-in-out backwards;
-
+		@include respond(phone) {
+			margin: 7.1rem 0 0 0;
+		}
 		.hero {
 			height: 85vh;
 			display: flex;
@@ -169,7 +184,7 @@
 				height: 100%;
 				border-right: $Common-Border;
 				border-bottom: $Common-Border;
-				padding: 0 2rem 0 4rem;
+				padding: 2rem 2rem 0 4rem;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
@@ -248,16 +263,25 @@
 
 .portfolio {
 	padding: 30rem 0;
+	@include respond(phone) {
+		padding: 5rem 0;
+	}
 	.portfolio-grid {
 		display: grid;
 		width: 70%;
 		grid-template-columns: repeat(2, 1fr);
-		grid-auto-rows: 50rem;
+		grid-auto-rows: max-content;
 		grid-gap: 3rem;
 		margin: 2rem auto;
+		@include respond(phone) {
+			grid-template-columns: repeat(1, 1fr);
+		}
 		.cell {
 			&:nth-of-type(odd) {
 				transform: translateY(-50%);
+				@include respond(phone) {
+					transform: translateY(0);
+				}
 			}
 			&:not(:first-child) {
 				border: $Common-Border;
@@ -364,10 +388,16 @@ body.active {
 
 	.head {
 		transform: translateX(20rem);
+		@include respond(phone) {
+			transform: translateX(0);
+		}
 	}
 
 	.content {
 		transform: translateX(20rem);
+		@include respond(phone) {
+			transform: translateX(30rem);
+		}
 	}
 
 	.close-btn {
