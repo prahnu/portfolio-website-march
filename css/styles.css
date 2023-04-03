@@ -81,6 +81,24 @@ p {
   display: grid;
   place-items: center; }
 
+.dev-message {
+  position: fixed;
+  inset: auto 20rem 3rem 20rem;
+  background-color: antiquewhite;
+  color: #1d1d1d;
+  z-index: 3000;
+  pointer-events: none;
+  text-align: center;
+  font-size: 1.6rem;
+  padding: 1rem;
+  border-radius: 1.2rem; }
+  .dev-message i {
+    font-size: 3rem;
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%); }
+
 .nav {
   position: fixed;
   top: 0;
