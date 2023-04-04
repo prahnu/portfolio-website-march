@@ -73,6 +73,10 @@ p {
   padding: 2rem 0 0 0;
   font-weight: 200; }
 
+h3 {
+  font-size: 5rem;
+  font-weight: 500; }
+
 .side-tag {
   position: fixed;
   background-color: #65fdcb;
@@ -353,9 +357,6 @@ p {
       transition: 0.5s ease; }
       .portfolio .portfolio-grid .cell.heading.show {
         opacity: 1; }
-      .portfolio .portfolio-grid .cell.heading h3 {
-        font-size: 5rem;
-        font-weight: 500; }
     .portfolio .portfolio-grid .cell.card {
       position: relative;
       padding: 3rem; }
@@ -416,6 +417,45 @@ p {
         margin: 1rem 0; }
         .portfolio .portfolio-grid .cell.card .btn-outline:not(:last-child) {
           margin-right: 1rem; }
+
+.recommendation {
+  padding: 4rem; }
+  .recommendation .slider-container {
+    width: 100%;
+    background-color: red;
+    position: relative;
+    height: 40rem; }
+    .recommendation .slider-container .slider-btn-left {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 3rem;
+      font-size: 5rem;
+      z-index: 40; }
+    .recommendation .slider-container .slider-btn-right {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 3rem;
+      font-size: 5rem;
+      z-index: 40; }
+    .recommendation .slider-container .slide {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: green;
+      transition: 0.5s ease; }
+      .recommendation .slider-container .slide_1 {
+        transform: translateX(0);
+        background-color: black; }
+      .recommendation .slider-container .slide_2 {
+        transform: translateX(100%);
+        background-color: blue; }
+      .recommendation .slider-container .slide_3 {
+        transform: translateX(200%);
+        background-color: yellow; }
 
 body.active .nav {
   transform: translateX(0); }

@@ -51,3 +51,36 @@ document.addEventListener('mousemove', controlBubble);
 checkBoxes();
 window.addEventListener('scroll', checkBoxes);
 // Removing active class from body when clicking outside the navbar
+
+let sliderContainers = document.querySelectorAll('.slider-container');
+
+sliderContainers.forEach((sliderContainer) => {
+	let sliderChildren = [...sliderContainer.children];
+	let slides = sliderChildren.filter((el) => el.classList.contains('slide'));
+	let currentSlide = 0;
+	let btnRight = sliderChildren.filter((el) => el.classList.contains('slider-btn-right'));
+	let btnLeft = sliderChildren.filter((el) => el.classList.contains('slider-btn-left'));
+	// if (currentSlide === 0) {
+	// 	btnLeft.forEach((btn) => (btn.style.opacity = '.3'));
+	// }
+
+	// if (currentSlide === slides.length - 1) {
+	// 	btnRight.forEach((btn) => (btn.style.opacity = '.3'));
+	// }
+
+	sliderContainer.addEventListener('click', (event) => {
+		if (event.target.closest('.slider-btn-right')) {
+			if (currentSlide < slides.length - 1) {
+				currentSlide++;
+			}
+		} else if (event.target.closest('.slider-btn-left')) {
+			if (currentSlide > 0) {
+				currentSlide--;
+			}
+		}
+		slides.forEach((el, i) => {
+			let translateVal = (i - currentSlide) * 100;
+			el.style.transform = `translateX(${translateVal}%)`;
+		});
+	});
+});
