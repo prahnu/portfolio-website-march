@@ -237,6 +237,7 @@
 				@include respond(phone) {
 					display: none;
 				}
+
 				.skills-trail {
 					padding-left: 5rem;
 					animation: scroll 800s backwards;
