@@ -84,3 +84,12 @@ sliderContainers.forEach((sliderContainer) => {
 		});
 	});
 });
+
+// Loading animation
+window.addEventListener('load', function () {
+	// Select the loading bar element
+	const loadingBar = document.querySelector('.loading-overlay');
+
+	// Hide the loading bar when the page is fully loaded
+	loadingBar.style.display = 'none';
+});
