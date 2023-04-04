@@ -422,9 +422,9 @@ h3 {
   padding: 4rem; }
   .recommendation .slider-container {
     width: 100%;
-    background-color: red;
     position: relative;
-    height: 40rem; }
+    height: 40rem;
+    overflow: hidden; }
     .recommendation .slider-container .slider-btn-left {
       position: absolute;
       top: 50%;
@@ -445,17 +445,17 @@ h3 {
       width: 100%;
       top: 0;
       left: 0;
-      background-color: green;
-      transition: 0.5s ease; }
+      transition: 0.5s ease;
+      display: flex;
+      align-items: center; }
       .recommendation .slider-container .slide_1 {
-        transform: translateX(0);
-        background-color: black; }
+        transform: translateX(0); }
       .recommendation .slider-container .slide_2 {
-        transform: translateX(100%);
-        background-color: blue; }
+        transform: translateX(100%); }
       .recommendation .slider-container .slide_3 {
-        transform: translateX(200%);
-        background-color: yellow; }
+        transform: translateX(200%); }
+      .recommendation .slider-container .slide .slide-card {
+        flex: 1; }
 
 body.active .nav {
   transform: translateX(0); }

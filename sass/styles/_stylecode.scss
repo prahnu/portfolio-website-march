@@ -374,9 +374,10 @@
 	padding: 4rem;
 	.slider-container {
 		width: 100%;
-		background-color: red;
+		// background-color: red;
 		position: relative;
 		height: 40rem;
+		overflow: hidden;
 		.slider-btn-left {
 			position: absolute;
 			top: 50%;
@@ -393,25 +394,32 @@
 			font-size: 5rem;
 			z-index: 40;
 		}
+
 		.slide {
 			position: absolute;
 			height: 100%;
 			width: 100%;
 			top: 0;
 			left: 0;
-			background-color: green;
+			// background-color: green;
 			transition: 0.5s ease;
+			display: flex;
+			align-items: center;
 			&_1 {
 				transform: translateX(0);
-				background-color: black;
+				// background-color: black;
 			}
 			&_2 {
 				transform: translateX(100%);
-				background-color: blue;
+				// background-color: blue;
 			}
 			&_3 {
 				transform: translateX(200%);
-				background-color: yellow;
+				// background-color: yellow;
+			}
+
+			.slide-card {
+				flex: 1;
 			}
 		}
 	}
