@@ -376,8 +376,24 @@
 		width: 100%;
 		// background-color: red;
 		position: relative;
-		height: 40rem;
+		height: 50rem;
 		overflow: hidden;
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0 95% 0 0;
+			background: linear-gradient(to right, $Dark-Primary, transparent);
+			z-index: 1;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0 0 0 95%;
+			background: linear-gradient(to left, $Dark-Primary, transparent);
+
+			z-index: 1;
+		}
 
 		.slider-btn-left {
 			position: absolute;
@@ -398,11 +414,12 @@
 
 		.slide {
 			position: absolute;
-			inset: 10rem;
+			inset: 0 10rem;
 			// background-color: green;
 			transition: 0.5s ease;
 			display: flex;
 			align-items: center;
+			height: 90%;
 			&_1 {
 				transform: translateX(0);
 				// background-color: black;
@@ -415,8 +432,16 @@
 				transform: translateX(200%);
 				// background-color: yellow;
 			}
+
+			&:last-child .slide-card:last-child {
+				border-right-width: 1px;
+			}
 			.slide-card {
 				flex: 1;
+				padding: 2rem;
+				border: $Common-Border;
+				border-width: 1px 0 1px 1px;
+				height: 90%;
 			}
 		}
 	}
