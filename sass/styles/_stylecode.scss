@@ -378,6 +378,7 @@
 		position: relative;
 		height: 40rem;
 		overflow: hidden;
+
 		.slider-btn-left {
 			position: absolute;
 			top: 50%;
@@ -397,10 +398,7 @@
 
 		.slide {
 			position: absolute;
-			height: 100%;
-			width: 100%;
-			top: 0;
-			left: 0;
+			inset: 10rem;
 			// background-color: green;
 			transition: 0.5s ease;
 			display: flex;
@@ -417,7 +415,6 @@
 				transform: translateX(200%);
 				// background-color: yellow;
 			}
-
 			.slide-card {
 				flex: 1;
 			}
