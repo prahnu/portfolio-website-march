@@ -458,18 +458,27 @@ h3 {
     position: relative;
     height: 50rem;
     overflow: hidden; }
+    @media screen and (max-width: 600px) {
+      .recommendation .slider-container {
+        overflow-x: scroll; } }
     .recommendation .slider-container::before {
       content: '';
       position: absolute;
       inset: 0 95% 0 0;
       background: linear-gradient(to right, #010a13, transparent);
       z-index: 1; }
+      @media screen and (max-width: 600px) {
+        .recommendation .slider-container::before {
+          display: none; } }
     .recommendation .slider-container::after {
       content: '';
       position: absolute;
       inset: 0 0 0 95%;
       background: linear-gradient(to left, #010a13, transparent);
       z-index: 1; }
+      @media screen and (max-width: 600px) {
+        .recommendation .slider-container::after {
+          display: none; } }
     .recommendation .slider-container .slider-btn-left {
       position: absolute;
       top: 50%;
@@ -477,6 +486,9 @@ h3 {
       left: 3rem;
       font-size: 5rem;
       z-index: 40; }
+      @media screen and (max-width: 600px) {
+        .recommendation .slider-container .slider-btn-left {
+          display: none; } }
     .recommendation .slider-container .slider-btn-right {
       position: absolute;
       top: 50%;
@@ -484,6 +496,9 @@ h3 {
       right: 3rem;
       font-size: 5rem;
       z-index: 40; }
+      @media screen and (max-width: 600px) {
+        .recommendation .slider-container .slider-btn-right {
+          display: none; } }
     .recommendation .slider-container .slide {
       position: absolute;
       inset: 0 10rem;
@@ -491,6 +506,10 @@ h3 {
       display: flex;
       align-items: center;
       height: 90%; }
+      @media screen and (max-width: 600px) {
+        .recommendation .slider-container .slide {
+          width: fit-content;
+          inset: 0; } }
       .recommendation .slider-container .slide_1 {
         transform: translateX(0); }
       .recommendation .slider-container .slide_2 {
@@ -505,6 +524,9 @@ h3 {
         border: 0.1rem solid #ecb365;
         border-width: 1px 0 1px 1px;
         height: 90%; }
+        @media screen and (max-width: 600px) {
+          .recommendation .slider-container .slide .slide-card {
+            min-width: 26rem; } }
 
 body.active .nav {
   transform: translateX(0); }

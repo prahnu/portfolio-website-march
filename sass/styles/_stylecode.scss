@@ -382,12 +382,18 @@
 		position: relative;
 		height: 50rem;
 		overflow: hidden;
+		@include respond(phone) {
+			overflow-x: scroll;
+		}
 		&::before {
 			content: '';
 			position: absolute;
 			inset: 0 95% 0 0;
 			background: linear-gradient(to right, $Dark-Primary, transparent);
 			z-index: 1;
+			@include respond(phone) {
+				display: none;
+			}
 		}
 
 		&::after {
@@ -397,9 +403,15 @@
 			background: linear-gradient(to left, $Dark-Primary, transparent);
 
 			z-index: 1;
+			@include respond(phone) {
+				display: none;
+			}
 		}
 
 		.slider-btn-left {
+			@include respond(phone) {
+				display: none;
+			}
 			position: absolute;
 			top: 50%;
 			transform: translateY(-50%);
@@ -408,6 +420,9 @@
 			z-index: 40;
 		}
 		.slider-btn-right {
+			@include respond(phone) {
+				display: none;
+			}
 			position: absolute;
 			top: 50%;
 			transform: translateY(-50%);
@@ -424,6 +439,10 @@
 			display: flex;
 			align-items: center;
 			height: 90%;
+			@include respond(phone) {
+				width: fit-content;
+				inset: 0;
+			}
 			&_1 {
 				transform: translateX(0);
 				// background-color: black;
@@ -446,6 +465,9 @@
 				border: $Common-Border;
 				border-width: 1px 0 1px 1px;
 				height: 90%;
+				@include respond(phone) {
+					min-width: 26rem;
+				}
 			}
 		}
 	}
